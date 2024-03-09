@@ -14,6 +14,9 @@ header {
     background-color: #222;
     text-align: center;
     border-radius: 10px;
+}
+
+header p {
     color: #fff;
     font-size: 30px;
 }
@@ -70,4 +73,9 @@ footer {
 
 .status {
     margin-top: 20px;
+}
+
+.current-time {
+    color: #bbb;
+    margin-top: 10px;
 }

@@ -7,9 +7,11 @@
     <title>Ticketfaster</title>
     <link rel="stylesheet" href="styles/index.css">
 </head>
-
 <body>
-    <header>Ticketfaster</header>
+    <header>
+        <p>Ticketfaster</p>
+        <div class="current-time"></div>
+    </header>
     <div class="event-list">
         <div class="event-card">
             <img class="team-logo" src="assets/logo_munchen.png"></img>
@@ -20,7 +22,6 @@
                 <b class="status available">Tickets available</b>
             </div>
             <img class="team-logo" src="assets/logo_bvb.png"></img>
-
         </div>
         <div class="event-card">
             <img class="team-logo" src="assets/logo_munchen.png"></img>
@@ -31,12 +32,18 @@
                 <b class="status available">Tickets available</b>
             </div>
             <img class="team-logo" src="assets/logo_darmstadt.png"></img>
-
         </div>
     </div>
     <footer>
         <center>Ticketfaster© 2024</center>
     </footer>
+
+    <script>
+        const currentDate = new Date();
+        const dateString = currentDate.toDateString();
+        const paragraph = document.querySelector('.current-time');
+        paragraph.textContent = dateString;
+    </script>
 </body>
 
 </html>
