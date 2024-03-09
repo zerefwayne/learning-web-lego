@@ -5,33 +5,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticketfaster</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-image: url('assets/background.jpg');
+        }
+
+        header {
+            margin: 30px 15%;
+            padding: 10px;
+            background-color: #222;
+            text-align: center;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 30px;
+        }
+
+        .event-list {
+            width: 80%;
+            margin-left: 10%;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .event-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .match-info {
+            display: flex;
+            width: auto;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            background-color: black;
+            width: 100%;
+            color: white;
+            padding: 10px;
+        }
+
+        .available {
+            color: green;
+        }
+
+        .team-logo {
+            height: 100px;
+            width: 100px;
+
+        }
+
+        .unavailable {
+            color: red;
+        }
+
+        .status {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <center>
-        <h1>Ticketfaster</h1>
-    </center>
-    <hr />
-    <br />
-    <h1>Bayern München vs Borussia Dortmund</h1>
-    <h2>Friday, 15<sup>th</sup> March 2024</h2>
-    <h3>Allianz Arena, München</h3>
-    <p>
-        <b>Tickets available at counter</b>
-    </p>
-    <hr />
-    <br />
-    <h1>Bayern München vs SV Darmstadt 98</h1>
-    <h2>Saturday 23<sup>th</sup> March 2024</h2>
-    <h3>Allianz Arena, München</h3>
-    <p>
-        <b>Tickets available at counter</b>
-    </p>
-    <br />
-    <br />
-    <p>
+    <header>Ticketfaster</header>
+    <div class="event-list">
+        <div class="event-card">
+            <img class="team-logo" src="assets/logo_munchen.png"></img>
+            <div class="match-info">
+                <h1>Bayern München vs Borussia Dortmund</h1>
+                <h2>Friday, 15<sup>th</sup> March 2024</h2>
+                <h3>Allianz Arena, München</h3>
+                <b class="status available">Tickets available</b>
+            </div>
+            <img class="team-logo" src="assets/logo_bvb.png"></img>
+
+        </div>
+        <div class="event-card">
+            <img class="team-logo" src="assets/logo_munchen.png"></img>
+            <div class="match-info">
+                <h1>Bayern München vs SV Darmstadt 98</h1>
+                <h2>Saturday, 23<sup>rd</sup> March 2024</h2>
+                <h3>Allianz Arena, München</h3>
+                <b class="status available">Tickets available</b>
+            </div>
+            <img class="team-logo" src="assets/logo_darmstadt.png"></img>
+
+        </div>
+    </div>
+    <footer>
         <center>Ticketfaster© 2024</center>
-    </p>
+    </footer>
 </body>
 
 </html>
