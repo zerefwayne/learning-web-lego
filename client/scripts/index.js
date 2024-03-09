@@ -8,32 +8,35 @@ paragraph.textContent = dateString;
 /* Display match data */
 
 async function displayMatches() {
-    const eventList = document.querySelector('.event-list');
+  const eventList = document.querySelector('.event-list');
 
-    const data = await fetch('http://localhost:8000/api/matches');
-    const {matches, teams} = await data.json();
-  
+  const data = await fetch('http://localhost:8000/api/matches');
+  const { matches } = await data.json();
+
+  console.log(matches);
+
+  try {
     matches.forEach(match => {
-      const teamA = teams.find(team => team[match.team_a_code]);
-      const teamB = teams.find(team => team[match.team_b_code]);
-  
+
+      console.log(match);
+
       const eventCard = document.createElement('div');
       eventCard.classList.add('event-card');
-  
+
       const teamALogo = document.createElement('img');
       teamALogo.classList.add('team-logo');
-      teamALogo.src = `assets/${teamA[match.team_a_code].logo_url}`;
-  
+      teamALogo.src = `assets/${match.TeamA.logo_url}`;
+
       const teamBLogo = document.createElement('img');
       teamBLogo.classList.add('team-logo');
-      teamBLogo.src = `assets/${teamB[match.team_b_code].logo_url}`;
-  
+      teamBLogo.src = `assets/${match.TeamB.logo_url}`;
+
       const matchInfo = document.createElement('div');
       matchInfo.classList.add('match-info');
-  
+
       const matchTitle = document.createElement('h1');
-      matchTitle.textContent = `${teamA[match.team_a_code].name} vs ${teamB[match.team_b_code].name}`;
-  
+      matchTitle.textContent = `${match.TeamA.name} vs ${match.TeamB.name}`;
+
       const matchDate = document.createElement('h2');
       const formattedDate = new Date(match.date).toLocaleDateString('en-US', {
         weekday: 'long',
@@ -42,32 +45,38 @@ async function displayMatches() {
         day: 'numeric'
       });
       matchDate.innerHTML = `${formattedDate}`;
-  
+
       const matchVenue = document.createElement('h3');
       matchVenue.textContent = match.venue;
-  
+
       const status = document.createElement('b');
-      status.classList.add('status', match.tickets_available ? 'available' : 'unavailable');
-      status.textContent = match.tickets_available ? 'Tickets available' : 'Tickets unavailable';
-  
+      status.classList.add('status', 'available');
+      status.textContent = 'Tickets available';
+
       // Append elements to the event card
       matchInfo.appendChild(matchTitle);
       matchInfo.appendChild(matchDate);
       matchInfo.appendChild(matchVenue);
       matchInfo.appendChild(status);
-  
+
       eventCard.appendChild(teamALogo);
       eventCard.appendChild(matchInfo);
       eventCard.appendChild(teamBLogo);
-  
+
       // Append the event card to the event list
       eventList.appendChild(eventCard);
-    });
+
+      console.log(eventList);
+      console.log(eventCard);
+    }) 
+  } catch (e) {
+    console.log(e);
   }
-  
-  // Call the function to display matches
-  displayMatches();
-  
+};
+
+// Call the function to display matches
+displayMatches();
+
 
 
 

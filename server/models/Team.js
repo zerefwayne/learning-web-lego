@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 const db = require('../config/database');
-const Match = require('./Match');
 
 const Team = db.define('Team', {
   code: {
@@ -16,8 +15,5 @@ const Team = db.define('Team', {
     allowNull: false,
   },
 });
-
-Team.hasMany(Match, { foreignKey: 'team_a_code', as: 'MatchesA' });
-Team.hasMany(Match, { foreignKey: 'team_b_code', as: 'MatchesB' });
 
 module.exports = Team;
