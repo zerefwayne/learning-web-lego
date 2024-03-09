@@ -1,0 +1,41 @@
+{
+    "matches": [
+        {
+            "team_a_code": "BAY",
+            "team_b_code": "DOR",
+            "date": "2024-03-15T17:00:00.000Z",
+            "venue": "Allianz Arena",
+            "tickets_available": false
+        },
+        {
+            "team_a_code": "BAY",
+            "team_b_code": "RBL",
+            "date": "2024-03-24T17:00:00.000Z",
+            "venue": "Allianz Arena",
+            "tickets_available": false
+        },
+        {
+            "team_a_code": "DOR",
+            "team_b_code": "RBL",
+            "date": "2024-03-28T17:00:00.000Z",
+            "venue": "Signal Iduna Park",
+            "tickets_available": true
+        }
+    ],
+    "teams": [
+        {
+            "BAY": {
+                "name": "FC Bayern Munchen",
+                "logo_url": "logo_munchen.png"
+            },
+            "DOR": {
+                "name": "Borussia Dortmund",
+                "logo_url": "logo_bvb.png"
+            },
+            "RBL": {
+                "name": "RB Leipzeig",
+                "logo_url": "logo_rbl.png"
+            }
+        }
+    ]
+}
